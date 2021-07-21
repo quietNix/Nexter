@@ -1,0 +1,66 @@
+.realtors {
+  background: $color-secondary;
+  grid-column: col-main 7 / col-full-end;
+
+  padding-top: 35%;
+  
+  h3{
+    text-align: center;
+    margin-bottom: 2vw;
+  }
+
+  &-profile {
+    display: grid;
+    grid-template-columns: min-content max-content;
+
+    justify-content: center;
+    align-items: center;
+
+    // grid
+    gap: 2vw 2vw;
+
+    &__img {
+      width: 9vh;
+      // height: 4.5vh;
+      border-radius: 50%;
+    }
+
+    &__detail {
+      // .typo__heading-h4{}
+      // .typo__heading-h4--light{}
+
+      &_sold {
+        margin-top: -.5em;
+        text-transform: uppercase;
+        color: $color-grey-light-2;
+        font-size: calc(clamp(9px, (0.1rem + 0.9vw) * 0.7, 3vmax));
+        line-height: 3em;
+      }
+    }
+  }
+}
+
+@include respond(tab-port) {
+  .realtors {
+    padding-top: 0rem;
+    grid-column: 1/-1;
+    padding: 2vh 0;
+
+    &-profile{
+      grid-template-columns: repeat(3, min-content max-content);
+      margin: 2vh 0;
+    }
+  }
+}
+
+@include respond(phone) {
+  .realtors {
+
+    &-profile{
+      grid-template-columns: min-content max-content;
+    }
+  }
+}
+
+// in grid boxes are first defined, and then the elements accordingly.
+// though min-content and max-content can be used for it

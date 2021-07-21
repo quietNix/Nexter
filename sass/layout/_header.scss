@@ -1,0 +1,82 @@
+.header {
+  grid-column: col-full-start / col-main 7;
+  background-image: linear-gradient(
+      rgba($color-secondary, 0.93),
+      rgba($color-secondary, 0.93)
+    ),
+    url("../img/hero.jpeg");
+  background-size: cover;
+  display: block;
+  padding: 8vw 5vw;
+
+  display: grid;
+  grid-template-rows: 1fr max-content minmax(min-content, 12vh) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
+  justify-content: center;
+
+  justify-items: start;
+  align-items: start;
+
+  &__logo {
+    width: calc(clamp(9px, max(0.7rem + 0.3vw, 0.3rem + 0.7vw) * 9, 30vmax));
+    justify-self: center;
+  }
+
+  // .typo__heading-h3{}
+  // .typo__heading-h1{}
+  // .shared__btn{}
+
+  h1 {
+    align-self: center;
+  }
+
+  &__seenon_text {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1rem;
+    align-items: center;
+    font-size: calc(clamp(9px, max(0.7rem + 0.3vw, 0.3rem + 0.7vw) * 1, 3vmax));
+    width: 100%;
+    color: $color-grey-light-2;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background: currentColor;
+    }
+  }
+
+  &__seenon_logo {
+    justify-self: stretch;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: start;
+
+    img {
+      height: calc(max(1rem, 1.7vw));
+      max-width: 100%;
+      filter: brightness(70%);
+    }
+  }
+}
+
+@include respond(tab-port) {
+  .header {
+    grid-column: 1/-1;
+  }
+}
+
+@include respond(phone-small) {
+  .header {
+    padding: 3rem 0 2rem 0;
+    &__seenon_logo{
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      justify-items: center;
+      padding: 2vh 0 0;
+      gap: 2vh;
+    }
+  }
+}

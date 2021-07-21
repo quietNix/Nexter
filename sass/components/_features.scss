@@ -1,0 +1,46 @@
+.features {
+  grid-column: col-center-start/ col-center-end;
+  margin: 10vw 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(calc((0.6rem + 0.4vw) * 21), 1fr)
+  );
+  gap: 1vw;
+
+  align-items: flex-start;
+
+  &-feature {
+    padding: 5vh 0;
+
+    &__icon {
+      width: calc(max(1.5rem, 2vw));
+      height: calc(max(1.5rem, 2vw));
+      margin-right: 0.5vw;
+      fill: $color-primary;
+      transform: translateY( -0.4em);
+    }
+
+    // .typo__heading-h4{}
+    // h4{display: inline;}
+
+    &__text {
+      margin-top: 0.5rem;
+      font-size: calc(max(0.7rem + 0.3vw, 0.3rem + 0.7vw) * 1.2);
+      line-height: 1.6em;
+      color: $color-grey-dark-2;
+    }
+  }
+}
+
+@include respond (phone){
+  .features{
+    &-feature{
+      text-align: center;
+      &__icon{
+        transform: translateY( 0.4em);
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.sidebar {
+  // font-size: 0.5rem;
+  background: $color-primary;
+  grid-row: 1 / -1;
+  grid-column: col-sidebar-start / col-sidebar-end;
+  display: flex;
+  justify-content: center;
+
+  &__btn {
+    border: none;
+    background-color: white;
+    height: 2px;
+    width: calc(max(1.5rem, 3vw));
+    margin-top: 4vmax;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: white;
+    }
+
+    &::before {
+      transform: translateY(calc(max(.5rem, 1vw)*-1));
+    }
+
+    &::after {
+      transform: translateY(calc(max(.5rem, 1vw)*1));
+    }
+  }
+}
+
+@include respond(tab-land) {
+  .sidebar {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    justify-content: flex-end;
+    align-items: center;
+
+    &__btn{
+      // width: 4%;
+      margin-top: 0;
+      margin-right: 2vw;
+    }
+  }
+}

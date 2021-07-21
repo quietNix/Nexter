@@ -1,0 +1,53 @@
+html {
+  font-size: clamp(9px, 1rem, 4vmax);
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  line-height: 1.6rem;
+  color: white;
+}
+
+.typo__heading-h1 {
+  font-family: $font-display;
+  font-weight: 400;
+  color: white;
+  font-size: calc(max(0.3rem + 0.7vw, 0.3rem + 0.7vw) * 2.9);
+  line-height: 1em;
+}
+
+.typo__heading-h2 {
+  font-family: $font-display;
+  font-weight: 400;
+  font-size: calc(max(0.7rem + 0.3vw, 0.3rem + 0.7vw) * 2.4);
+  line-height: 1em;
+  font-style: italic;
+  color: $color-grey-dark-1;
+}
+
+.typo__heading-h3 {
+  font-family: $font-display;
+  font-weight: 400;
+  font-size: calc(max(0.7rem + 0.3vw, 0.3rem + 0.7vw) * 1.2);
+  line-height: 2em;
+  color: $color-primary;
+}
+
+.typo__heading-h4 {
+  display: inline;
+  font-family: $font-display;
+  font-weight: 400;
+  font-size: calc(max(0.7rem + 0.3vw, 0.3rem + 0.7vw) * 1.4);
+  line-height: 1em;
+  color: $color-grey-dark-1;
+
+  &--light{
+    color: white;
+  }
+}
+
+//u can scale text and margin and padding based on font--size using em, and that font
+//size can be decided using clamp, 
+//but once the screen goes beyond the certain required size, the text wont sale  
+//as intended, so max-width: 8k set font size: 2rem or so.

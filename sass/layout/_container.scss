@@ -1,0 +1,46 @@
+.container {
+  // padding: 8vh 8vw;
+  // background: white;
+  // min-height: 84vh;
+
+  display: grid;
+  grid-template-rows: 80vmin min-content 40vw repeat(3, min-content);
+  grid-template-columns:
+    [col-sidebar-start] 5.2vw [col-sidebar-end col-full-start]
+    1fr
+    [col-center-start]
+    repeat(8, [col-main] minmax(min-content, #{"max(9rem, 9vw)"}))
+    [col-center-end]
+    1fr
+    [col-full-end];
+}
+
+@include respond(tab-land) {
+  .container {
+    grid-template-rows: minmax(0rem, 6vw) 80vmin min-content 40vw repeat(
+        3,
+        min-content
+      );
+    grid-template-columns:
+      [col-full-start]
+      1fr
+      [col-center-start]
+      repeat(8, [col-main] minmax(min-content, #{"max(9rem, 9vw)"}))
+      [col-center-end]
+      1fr
+      [col-full-end];
+  }
+}
+
+@include respond(tab-port) {
+  .container {
+    grid-template-rows: minmax(2.4rem, 6vw) calc(100vh - 2.4rem) min-content min-content 40vw;//rest rows are sized min-content, implicit row
+  }
+}
+
+
+@include respond(phone) {
+  .container {
+    grid-template-rows: minmax(2.4rem, 6vw) calc(100vh - 2.4rem);//rest rows are sized min-content, implicit row
+  }
+}

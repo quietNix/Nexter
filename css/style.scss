@@ -1,0 +1,45 @@
+@import "../sass/abstract/variables";
+@import "../sass/abstract/mixins";
+
+@import "../sass/base/reset";
+@import "../sass/base/typography";
+
+//shared components
+@import "../sass/components/shared/shared__btn";
+
+//container{>*}
+@import "../sass/layout/container";
+
+@import "../sass/layout/sidebar";
+
+@import "../sass/layout/header";
+
+@import "../sass/components/realtors";
+
+@import "../sass/components/features";
+
+@import "../sass/components/story";
+
+@import "../sass/components/homes";
+
+@import "../sass/components/gallery";
+
+@import "../sass/layout/footer";
+
+/*
+well sir, take any website and go to screenfly, change devices u will see that
+the text is either too small with respect to screen size, or the layouts that is 
+card contaier are not scaling up, which wont be problem if used flex, grids, 
+so try to know that, which way is the right way.
+either setting layout first, or the elements init, like font size, and setting 
+its container as min-content in grids
+one way is to do layuout first, and using vh vw for text and elemnet
+or media quries for font
+
+another way is to best uptill now, setting each already responsive layout section's font size with respect to vw, and then using 
+em, which will be respect to that font-size, to set up margin, padding within the container. or use vw vh for that too.
+*/
+
+//start with rem for padding,
+// and for other length things- start with rem, look in all screen- try to adjust, if not use
+// vw or max or clamp or min or minmax.

@@ -1,0 +1,16 @@
+.shared__btn {
+  background: $color-primary;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-family: $font-display;
+  font-size: calc(clamp(9px, max(0.7rem + 0.3vw, 0.3rem + 0.7vw) * 1, 3vmax));
+  line-height: 1em;
+  text-transform: uppercase;
+  padding: 1.1em 1.8em;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    background: $color-primary-dark;
+  }
+}
